@@ -19,7 +19,11 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
+/* .logo-font {
+    text-transform:uppercase;
+} */
+
+.logo-font{
     text-transform: uppercase;
 }
 
@@ -49,7 +53,7 @@ body {
 }
 
 .text-black {
-    color: #000 !important;
+    color: #000!important;
 }
 
 .border-black {
