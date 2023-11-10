@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-uj#z-s6q3q&oywnkn1_+1=_6i(+ja&@wexx^9_p=9^*n@=wvyf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-brendancoon-boutiqueado-pwetgsgcabj.ws-eu104.gitpod.io', '8000-brendancoon-boutiqueado-pwetgsgcabj.ws-eu105.gitpod.io','8000-brendancoon-boutiqueado-pwetgsgcabj.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['botique-ado.herokuapp.com','localhost','8000-brendancoon-boutiqueado-pwetgsgcabj.ws-eu104.gitpod.io','8000-brendancoon-boutiqueado-pwetgsgcabj.ws-eu105.gitpod.io','8000-brendancoon-boutiqueado-pwetgsgcabj.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -128,6 +128,11 @@ WSGI_APPLICATION = 'botique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
